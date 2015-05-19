@@ -1,7 +1,7 @@
 
 .card p {
   display: inline-block;
-  border: 2px red inset;
+  border: 4px red outset;
   height: 125 px;
   width: 200px;
   text-align: center;
@@ -10,5 +10,5 @@
 }
 
 .card p.back {
-  border-color: blue;
+  border: 4px blue outset;
 }
