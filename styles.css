@@ -1,0 +1,10 @@
+
+.card p {
+  display: inline-block;
+  border: 2px red inset;
+  height: 125 px;
+  width: 200px;
+  text-align: center;
+  line-height: 100px;
+  vertical-align: middle;
+}
