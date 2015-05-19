@@ -8,7 +8,7 @@ flashApp.controller("CardController", function($scope){
      back: "who got the key to the jeep"
     },
     {front: "without me",
-     back: "life has less color"
+     back: "there would just be aweso"
    }
   ];
 });
