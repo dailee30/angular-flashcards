@@ -1,0 +1,14 @@
+
+.card p {
+  display: inline-block;
+  border: 4px red outset;
+  height: 125 px;
+  width: 200px;
+  text-align: center;
+  line-height: 100px;
+  vertical-align: middle;
+}
+
+.card p.back {
+  border: 4px blue outset;
+}
