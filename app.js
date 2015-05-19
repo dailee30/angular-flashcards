@@ -11,4 +11,8 @@ flashApp.controller("CardController", function($scope){
      back: "there would just be aweso"
    }
   ];
+  $scope.current = 0;
+  $scope.nextCard = function(){
+    $scope.current = ($scope.current+1) % ($scope.cards.length);
+  };
 });
