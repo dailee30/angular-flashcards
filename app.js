@@ -31,21 +31,31 @@ flashApp.controller("CardController", function($scope){
     $scope.front = !$scope.front;
   };
 
+  $scope.remove = function() {
+    $scope.front = true;
+    $scope.cards.splice($scope.current,1)
+    $scope.current = $scope.current % $scope.cards.length;
+  };
+
+
+
 });
 
 // OR
-$scope.next = function(){
-  var step = =(!$scope.front); // change cards if on back
-  $scope.move(step);
-}
+// $scope.next = function(){
+//   var step = =(!$scope.front); // change cards if on back
+//   $scope.move(step);
+// }
+//
+// $scope.back = function(){
+//   var step = -($scope.front); //change card if on front
+// }
+//
+// $scope.move = function(step){ // step is 0,1,-1
+//   var numCards = $scope.cards.length;
+//   $scope.current = ($scope.current + step + numCards) % numCards;
+//   $scope.front = !$scope.front;
+// }
+// });
 
-$scope.back = function(){
-  var step = -($scope.front); //change card if on front
-}
-
-$scope.move = function(step){ // step is 0,1,-1
-  var numCards = $scope.cards.length;
-  $scope.current = ($scope.current + step + numCards) % numCards;
-  $scope.front = !$scope.front;
-}
-});
+//
