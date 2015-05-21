@@ -22,8 +22,14 @@
     </span>
     <button ng-click="resetDeck()">reset</button>
   </section>
-  <section ng-controller="CardsController">
-    
+  <section ng-controller="CardController">
+    <label for="front">Front</label>
+    <textarea name="front" ng-model="front"></textarea>
+    <label for="back">Back</label>
+    <textarea name="Back" ng-model="back"></textarea>
+    <div class="">
+      <button ng-click="addCard()" name="button">add</button>
+    </div>{{currentCards}}
   </section>
   <script src="./app.js"></script>
   </body>
