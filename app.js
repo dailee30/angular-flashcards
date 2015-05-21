@@ -50,6 +50,8 @@ flashApp.controller("StudyController", function($scope){
   $scope.resetDeck();
 });
 
+flashApp.controller("CardsController", function(){});
+
 // OR
 // $scope.next = function(){
 //   var step = =(!$scope.front); // change cards if on back
