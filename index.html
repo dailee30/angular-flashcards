@@ -6,8 +6,8 @@
   <title>Document</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 </head>
-<body>
-  <section ng-controller="CardController">
+<body ng-controller="DeckController">
+  <section ng-controller="StudyController">
     <div ng-if="cards.length" class="card">
       <p ng-if="front" class="front">{{ cards[current].front }}</p>
       <p ng-if="!front" class="back">{{ cards[current].back }}</p>
