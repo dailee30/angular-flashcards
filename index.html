@@ -15,9 +15,12 @@
     <p ng-if="!cards.length">
       All gone - Great Job!
     </p>
-    <button ng-click="back()">back</button>
-    <button ng-click="next()">next</button>
-    <button ng-click="remove()">I've got this</button>
+    <span ng-if="cards.length">
+      <button ng-click="back()">back</button>
+      <button ng-click="next()">next</button>
+      <button ng-click="gotIt()">I've got this</button>
+    </span>
+    <button ng-click="resetDeck()">reset</button>
   </section>
   <script src="./app.js"></script>
   </body>
