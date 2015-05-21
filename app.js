@@ -1,6 +1,6 @@
 var flashApp = angular.module("flash", []);
 flashApp.controller("CardController", function($scope){
-  $scope.cards = [
+  var allCards = [
     {front: "F 1",
      back: "B 1"
     },
@@ -11,12 +11,10 @@ flashApp.controller("CardController", function($scope){
      back: "B 3"
    }
   ];
-  $scope.current = 0;
-  $scope.front = true;
-  // $scope.back = false;
+
 
   $scope.next = function() {
-    var move = +(!$scope.front); //change cards if on back
+    var move = +(!$scope.frot); //change cards if on back
     var numCards = $scope.cards.length;
 
     $scope.current = ($scope.current + move) % numCards;
@@ -31,14 +29,19 @@ flashApp.controller("CardController", function($scope){
     $scope.front = !$scope.front;
   };
 
-  $scope.remove = function() {
+  $scope.gotIt = function() {
     $scope.front = true;
-    $scope.cards.splice($scope.current,1)
+    $scope.cards.splice($scope.current,1);
     $scope.current = $scope.current % $scope.cards.length;
   };
 
+  $scope.resetDeck = function() {
+    $scope.current = 0;
+    $scope.front = true;
+    $scope.cards = [].concat(allCards);
+  };
 
-
+  $scope.reset();
 });
 
 // OR
