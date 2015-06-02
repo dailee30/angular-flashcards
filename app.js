@@ -1,5 +1,5 @@
 var flashApp = angular.module("flash", []);
-flashApp.controller("CardController", function($scope){
+flashApp.controller("DeckController", function ($scope){
   var allCards = [
     {front: "F 1",
      back: "B 1"
@@ -12,9 +12,24 @@ flashApp.controller("CardController", function($scope){
    }
   ];
 
+  var studyDeck; //new card published and subscribed
+
+  $scope.refreshStudyDeck = function(){
+    return studyDeck = [].concat(allCards);
+  };
+
+  $scope.addToDeck = function(side1, side2){
+     var newCard = { front: side1, back: side2 };
+     allCards.push(newCard);
+     studyDeck && studyDeck.push(newCard);
+  };
+});
+
+flashApp.controller("StudyController", function($scope){
+
 
   $scope.next = function() {
-    var move = +(!$scope.frot); //change cards if on back
+    var move = +(!$scope.front); //change cards if on back
     var numCards = $scope.cards.length;
 
     $scope.current = ($scope.current + move) % numCards;
@@ -32,16 +47,24 @@ flashApp.controller("CardController", function($scope){
   $scope.gotIt = function() {
     $scope.front = true;
     $scope.cards.splice($scope.current,1);
-    $scope.current = $scope.current % $scope.cards.length;
+    $scope.current = ($scope.current % $scope.cards.length) || 0;
   };
 
   $scope.resetDeck = function() {
     $scope.current = 0;
     $scope.front = true;
-    $scope.cards = [].concat(allCards);
+    $scope.cards = $scope.$parent.refreshStudyDeck();
   };
 
-  $scope.reset();
+  $scope.resetDeck();
+});
+
+flashApp.controller("CardController", function($scope){
+  $scope.addCard = function() {
+    $scope.$parent.addToDeck($scope.front, $scope.back);
+    $scope.front = "";
+    $scope.back = "";
+  };
 });
 
 // OR

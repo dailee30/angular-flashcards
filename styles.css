@@ -1,14 +1,41 @@
 
 .card p {
   display: inline-block;
-  border: 4px red outset;
-  height: 125 px;
+  border: 4px lightblue outset;
+  /*background-image: url(https://farm1.staticflickr.com/55/147874576_8a453079f3_o.jpg);*/
+  /*background-image: url("http://designlovr.com/examples/dynamic_stack_of_index_cards/images/card_bg.jpg");
+  background-size: contain;*/
+  background-image:
+    linear-gradient(180deg, white 3rem, #F0A4A4 calc(3rem), #F0A4A4 calc(3rem + 2px), transparent 1px),
+    repeating-linear-gradient(0deg, transparent, transparent 1.5rem, #DDD 1px, #DDD calc(1.5rem + 1px));
+  box-shadow: 1px 1px 3px rgba(0,0,0,.25);
+  height: 14rem;
+  /*height: 125 px;*/
   width: 200px;
   text-align: center;
-  line-height: 100px;
+  line-height: 50px;
   vertical-align: middle;
 }
 
 .card p.back {
   border: 4px blue outset;
+}
+
+.buttons {
+  margin-left: 16px;
+}
+
+.CardController{
+  /*display: inline-block;*/
+  overflow: auto;
+  margin: auto;
+  width: 70%;
+  padding: 3% 3% 3% 3%;
+}
+
+label {
+  display: inline-block;
+  width: 25%;
+  margin: auto;
+
 }
