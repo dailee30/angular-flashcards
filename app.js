@@ -21,10 +21,10 @@ flashApp.controller("DeckController", function ($scope){
   $scope.addToDeck = function(side1, side2){
      var newCard = { front: side1, back: side2 };
      allCards.push(newCard);
-     studyDeck.push(newCard);
+     studyDeck && studyDeck.push(newCard);
   };
-
 });
+
 flashApp.controller("StudyController", function($scope){
 
 
@@ -53,7 +53,7 @@ flashApp.controller("StudyController", function($scope){
   $scope.resetDeck = function() {
     $scope.current = 0;
     $scope.front = true;
-    $scope.cards = $scope.$parent.newStudyDeck();
+    $scope.cards = $scope.$parent.refreshStudyDeck();
   };
 
   $scope.resetDeck();
@@ -62,6 +62,8 @@ flashApp.controller("StudyController", function($scope){
 flashApp.controller("CardController", function($scope){
   $scope.addCard = function() {
     $scope.$parent.addToDeck($scope.front, $scope.back);
+    $scope.front = "";
+    $scope.back = "";
   };
 });
 

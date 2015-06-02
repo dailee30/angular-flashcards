@@ -15,22 +15,27 @@
     <p ng-if="!cards.length">
       All gone - Great Job!
     </p>
-    <span ng-if="cards.length">
-      <button ng-click="back()">back</button>
-      <button ng-click="next()">next</button>
-      <button ng-click="gotIt()">I've got this</button>
-    </span>
-    <button ng-click="resetDeck()">reset</button>
+    <div class="buttons">
+      <span ng-if="cards.length">
+        <button ng-click="back()">back</button>
+        <button ng-click="next()">next</button>
+        <button ng-click="gotIt()">got it</button>
+      </span>
+      <button ng-click="resetDeck()">reset</button>
+    </div>
   </section>
-  <section ng-controller="CardController">
-    <label for="front">Front</label>
-    <textarea name="front" ng-model="front"></textarea>
-    <label for="back">Back</label>
-    <textarea name="Back" ng-model="back"></textarea>
-    <div class="">
-      <button ng-click="addCard()" name="button">add</button>
-    </div>{{currentCards}}
-  </section>
+  <div class="wrapper">
+    <section ng-controller="CardController">
+      <label for="front">Front</label>
+      <textarea name="front" ng-model="front"></textarea>
+      <label for="back">Back</label>
+      <textarea name="Back" ng-model="back"></textarea>
+      <div class="buttons">
+        <button ng-click="addCard()" name="button">add</button>
+      </div>{{currentCards}}
+    </section>
+  </div>
+
   <script src="./app.js"></script>
   </body>
 </html>
