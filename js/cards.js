@@ -1,9 +1,9 @@
-var cardModule = angular.module("flash.controllers.card", []);
+var cardModule = angular.module("flash.cards", []);
 
- ctrlModule.controller('CardsController',function ($scope) {
+ cardModule.controller('CardsController',function ($scope) {
    $scope.addCard = function() {
      $scope.$parent.addCard($scope.front, $scope.back);
      $scope.front= '';
      $scope.back= '';
-     };
+   };
 });
