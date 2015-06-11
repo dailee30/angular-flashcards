@@ -1,0 +1,17 @@
+
+  <section>
+    <div ng-if="cards.length" class="card">
+      <p ng-if="front" class="front schoolbell">{{ cards[current].front }}</p>
+      <p ng-if="!front" class="back schoolbell">{{ cards[current].back }}</p>
+    </div>
+    <nav class="study">
+    </div>
+      <p ng-if="!cards.length">No more cards to study, fantastic job! Really!</p>
+      <span ng-if="cards.length">
+      <button ng-click="back()">Back</button>
+      <button ng-click="next()">Next</button>
+      <button ng-click="gotIt()">Got it!</button>
+      </span>
+      <button ng-click="reset()">Reset cards</button>
+    </nav>
+  </section>
